@@ -1,0 +1,16 @@
+#!/bin/python
+
+from pyinp import data, args
+
+try:
+    args = [int(arg) for arg in args]
+except:
+    print('Limits must be numbers')
+
+
+if len(args) == 0:
+    print(data)
+elif len(args) == 1:
+    print(data[args[0]:])
+else:
+    print(data[args[0]:args[1]])

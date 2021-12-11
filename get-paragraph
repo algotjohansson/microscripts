@@ -1,0 +1,20 @@
+#!/bin/python
+
+from pyinp import lines, args
+
+paragraphs = ['']
+for line in lines:
+    if line == '':
+        paragraphs.append('')
+    else:
+        paragraphs[-1] += f'{line}\n'
+
+paragraphs = [p[0:-1] for p in paragraphs if '\n' in p]
+
+if len(args) == 0:
+    to_print = ''
+    for paragraph in paragraphs:
+        to_print = to_print+paragraph+'\n\n'
+    print(to_print[0:-2])
+else:
+    print(paragraphs[int(args[0])])

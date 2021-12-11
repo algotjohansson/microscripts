@@ -1,0 +1,3 @@
+#!/bin/bash
+
+./get-until-and-including $@ | substr 0 -1

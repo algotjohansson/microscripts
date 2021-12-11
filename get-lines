@@ -1,0 +1,21 @@
+#!/bin/python
+
+from pyinp import lines, args
+
+
+def printlist(lst):
+    for line in lst:
+        print(line)
+
+
+try:
+    args = [int(arg) for arg in args]
+except:
+    print('Limits must be numbers')
+
+if len(args) == 0:
+    printlist(lines)
+elif len(args) == 1:
+    print(lines[args[0]])
+else:
+    printlist(lines[args[0]:args[1]])
